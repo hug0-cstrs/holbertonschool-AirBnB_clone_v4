@@ -25,7 +25,7 @@ $(document).ready(function () {
           'Content-type': 'application/json'
       },
       success: function (data) {
-          for (place in data) {
+        data.forEach(function (place) {
           const article = $('<article>');
           article.html(
             `<div class="title_box">
@@ -46,7 +46,7 @@ $(document).ready(function () {
             <div class="description">${place.description}</div>`
           );
           $('section.places').append(article);
-        }
+        });
       }
-    });
+    })
 });
